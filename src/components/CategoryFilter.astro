@@ -1,0 +1,68 @@
+---
+export interface Category {
+  id: string;
+  label: string;
+}
+
+export interface Props {
+  categories: Category[];
+}
+
+const { categories } = Astro.props;
+---
+
+<div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+  <button
+    class="category-btn active bg-accent text-black px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors cursor-pointer"
+    data-category="all"
+  >
+    All
+  </button>
+  {categories.map((cat) => (
+    <button
+      class="category-btn bg-white text-primary border border-primary px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap hover:bg-accent hover:border-accent transition-colors cursor-pointer"
+      data-category={cat.id}
+    >
+      {cat.label}
+    </button>
+  ))}
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.category-btn');
+  const cards = document.querySelectorAll('.artwork-card');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const category = (btn as HTMLElement).dataset.category;
+
+      // Update active states
+      buttons.forEach((b) => {
+        b.classList.remove('active', 'bg-accent', 'text-black');
+        b.classList.add('bg-white', 'text-primary', 'border', 'border-primary');
+      });
+      btn.classList.add('active', 'bg-accent', 'text-black');
+      btn.classList.remove('bg-white', 'text-primary', 'border', 'border-primary');
+
+      // Show/hide cards
+      cards.forEach((card) => {
+        const cardEl = card as HTMLElement;
+        if (category === 'all' || cardEl.dataset.category === category) {
+          cardEl.style.display = '';
+        } else {
+          cardEl.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

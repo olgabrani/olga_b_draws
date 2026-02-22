@@ -1,0 +1,50 @@
+---
+export interface Props {
+  id: string;
+  title: string;
+  image: string;
+  category: string;
+}
+
+const { id, title, image, category } = Astro.props;
+
+// Dynamic image imports for Astro image optimization
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/images/gallery/*.*', { eager: true });
+const imagePath = `../assets/images/gallery/${image}`;
+const imageModule = images[imagePath];
+---
+
+<div class="group artwork-card" data-category={category}>
+  <div class="bg-white rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.03]">
+    {imageModule ? (
+      <img
+        src={imageModule.default.src}
+        alt={title}
+        width={imageModule.default.width}
+        height={imageModule.default.height}
+        loading="lazy"
+        decoding="async"
+        class="w-full h-auto object-cover"
+      />
+    ) : (
+      <div class="w-full aspect-square bg-neutral flex items-center justify-center text-gray-400">
+        Image not found
+      </div>
+    )}
+    <div class="p-4 flex items-center justify-between">
+      <h3 class="font-heading font-medium text-sm">{title}</h3>
+      <a
+        href="https://www.redbubble.com/people/olga-b-draws/shop"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs text-gray-400 hover:text-accent transition-colors flex items-center gap-1"
+        title="Available in shop"
+      >
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+        </svg>
+        <span>Shop</span>
+      </a>
+    </div>
+  </div>
+</div>

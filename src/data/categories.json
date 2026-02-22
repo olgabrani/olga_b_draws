@@ -1,0 +1,6 @@
+[
+  { "id": "characters", "label": "Characters" },
+  { "id": "nature", "label": "Nature" },
+  { "id": "everyday", "label": "Everyday Scenes" },
+  { "id": "sketchbook", "label": "Sketchbook" }
+]

@@ -1,0 +1,132 @@
+---
+import Layout from '../components/Layout.astro';
+import Button from '../components/Button.astro';
+import ArtworkCard from '../components/ArtworkCard.astro';
+import artworks from '../data/artworks.json';
+
+const featuredWorks = artworks.filter((a) => a.featured).slice(0, 3);
+
+// Hero image
+const heroImages = import.meta.glob<{ default: ImageMetadata }>('../assets/images/gallery/scan-4.jpeg', { eager: true });
+const heroImage = heroImages['../assets/images/gallery/scan-4.jpeg'];
+---
+
+<Layout
+  title="Olga B Draws – Colorful Illustrations & Visual Stories"
+  description="Portfolio of Olga B — colorful illustrations, playful characters, and visual stories."
+>
+  <!-- HERO SECTION -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h1 class="font-heading font-bold text-5xl md:text-7xl tracking-tight">
+        OLGA B DRAWS
+      </h1>
+      <div class="w-24 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+      <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-xl mx-auto font-body">
+        Colorful illustrations & playful visual stories.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <Button href="/gallery" variant="primary">View Gallery</Button>
+        <Button href="/contact" variant="outline">Contact</Button>
+      </div>
+
+      <!-- Hero Featured Image -->
+      {heroImage && (
+        <div class="mt-14 max-w-3xl mx-auto fade-in">
+          <img
+            src={heroImage.default.src}
+            alt="Featured Artwork by Olga B Draws"
+            width={heroImage.default.width}
+            height={heroImage.default.height}
+            class="w-full h-auto rounded-2xl shadow-lg"
+          />
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- FEATURED WORK SECTION -->
+  <section class="py-16 md:py-24 bg-neutral">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-12">
+        Featured Work
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {featuredWorks.map((artwork) => (
+          <div class="fade-in">
+            <ArtworkCard
+              id={artwork.id}
+              title={artwork.title}
+              image={artwork.image}
+              category={artwork.category}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP MY ART CTA SECTION -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 text-center fade-in">
+      <div class="w-12 h-1 bg-accent mx-auto mb-6 rounded-full"></div>
+      <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">
+        Love what you see? Get prints & more.
+      </h2>
+      <p class="text-gray-600 mb-8 max-w-lg mx-auto">
+        Illustrations available as prints, stickers, phone cases, and more on Redbubble.
+      </p>
+      <Button href="https://www.redbubble.com/people/olga-b-draws/shop" variant="primary">
+        Visit My Shop →
+      </Button>
+    </div>
+  </section>
+
+  <!-- SHORT ABOUT SECTION -->
+  <section class="py-16 md:py-24 bg-neutral">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Left: About Image Placeholder -->
+        <div class="fade-in">
+          <div class="w-full aspect-square bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400">
+            <span class="text-sm">Photo coming soon</span>
+          </div>
+        </div>
+
+        <!-- Right: About Text -->
+        <div class="fade-in">
+          <h2 class="font-heading font-bold text-3xl mb-6">
+            Hi, I'm Olga
+          </h2>
+          <div class="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              I'm an illustrator who loves bringing colorful characters and playful scenes to life.
+              My work is inspired by everyday moments, nature, and the small things that make us smile.
+            </p>
+            <p>
+              Whether it's a curious bee or a happy face, I aim to create art that feels warm,
+              inviting, and a little bit whimsical. I'm always open to new collaborations
+              and creative projects.
+            </p>
+          </div>
+          <div class="mt-8">
+            <Button href="/about" variant="outline">Read More</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLABORATION CTA SECTION -->
+  <section class="py-16 md:py-20 border-t-2 border-accent">
+    <div class="max-w-3xl mx-auto px-6 text-center fade-in">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">
+        Interested in collaborating?
+      </h2>
+      <p class="text-gray-600 mb-8">
+        Let's create something playful together.
+      </p>
+      <Button href="/contact" variant="primary">Contact</Button>
+    </div>
+  </section>
+</Layout>

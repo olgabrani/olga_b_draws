@@ -1,0 +1,85 @@
+---
+import Layout from '../components/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout
+  title="About – Olga B Draws"
+  description="Learn about Olga B, her illustration process, and creative journey."
+>
+  <section class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <!-- Left: Photo -->
+        <div class="fade-in">
+          <div class="w-full aspect-[3/4] bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 sticky top-28">
+            <span class="text-sm">Studio photo coming soon</span>
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="fade-in">
+          <h1 class="font-heading font-bold text-4xl md:text-5xl mb-8">
+            About Me
+          </h1>
+
+          <div class="space-y-8 text-gray-600 leading-relaxed">
+            <!-- Intro -->
+            <div>
+              <p>
+                Hi, I'm Olga — an illustrator based in Greece. I create colorful,
+                playful illustrations that tell small visual stories. My work lives
+                somewhere between whimsy and warmth, always aiming to bring a smile.
+              </p>
+            </div>
+
+            <!-- Inspiration -->
+            <div>
+              <h2 class="font-heading font-semibold text-xl text-primary mb-3">Inspiration</h2>
+              <p>
+                I find inspiration in everyday life — morning coffee, sunlight patterns,
+                animals with personality, overheard conversations, and the small details
+                most people overlook. Nature, people, and simple moments are my biggest
+                creative triggers.
+              </p>
+            </div>
+
+            <!-- Process -->
+            <div>
+              <h2 class="font-heading font-semibold text-xl text-primary mb-3">Process</h2>
+              <p>
+                Most of my work starts on paper. I sketch freely in my sketchbook,
+                then scan and sometimes refine digitally. I like keeping the hand-drawn
+                quality visible — imperfections included. It's what makes each piece
+                feel alive and honest.
+              </p>
+            </div>
+
+            <!-- Medium -->
+            <div>
+              <h2 class="font-heading font-semibold text-xl text-primary mb-3">Medium</h2>
+              <p>
+                I work primarily with markers, colored pencils, and ink on paper.
+                Occasionally I explore digital tools for cleanup and color adjustment,
+                but the foundation is always traditional and tactile.
+              </p>
+            </div>
+
+            <!-- Collaborations -->
+            <div>
+              <h2 class="font-heading font-semibold text-xl text-primary mb-3">Let's Work Together</h2>
+              <p>
+                I'm open to collaborations, illustration projects, and creative
+                partnerships. Whether it's editorial, merchandise, or something
+                entirely new — I'd love to hear your idea.
+              </p>
+              <div class="mt-6">
+                <Button href="/contact" variant="primary">Get in Touch</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
