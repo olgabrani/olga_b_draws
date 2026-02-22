@@ -31,10 +31,55 @@ import artworks from '../data/artworks.json';
             id={artwork.id}
             title={artwork.title}
             image={artwork.image}
-            category={artwork.category}
+            categories={artwork.categories}
+            shop_url={artwork.shop_url}
           />
         ))}
       </div>
     </div>
   </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white text-4xl leading-none hover:text-accent transition-colors cursor-pointer" aria-label="Close">&times;</button>
+    <div class="max-w-5xl max-h-[90vh] mx-4">
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" />
+      <p id="lightbox-title" class="text-white text-center mt-4 font-heading text-lg"></p>
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // Open lightbox on image click
+    document.querySelectorAll('.artwork-img').forEach((img) => {
+      img.addEventListener('click', () => {
+        const el = img as HTMLElement;
+        lightboxImg.src = el.dataset.fullSrc || '';
+        lightboxImg.alt = el.dataset.title || '';
+        if (lightboxTitle) lightboxTitle.textContent = el.dataset.title || '';
+        lightbox?.classList.remove('hidden');
+        lightbox?.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close lightbox
+    function closeLightbox() {
+      lightbox?.classList.add('hidden');
+      lightbox?.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </Layout>

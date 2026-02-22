@@ -1,7 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import logoSrc from '../assets/images/logo.png';
-
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Gallery', href: '/gallery' },
@@ -17,13 +14,12 @@ const currentPath = Astro.url.pathname;
 <header id="site-header" class="sticky top-0 z-50 bg-white transition-shadow duration-300">
   <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-2 shrink-0">
-      <Image src={logoSrc} alt="Olga B Draws" width={48} height={48} class="rounded-full" />
-      <span class="font-heading font-bold text-lg hidden sm:inline">Olga B Draws</span>
+    <a href="/" class="shrink-0">
+      <img src="/logo.png" alt="Olga B Draws" width="144" height="144" class="rounded-full" />
     </a>
 
     <!-- Desktop Nav -->
-    <ul class="hidden md:flex items-center gap-6 text-sm font-medium">
+    <ul class="hidden md:flex items-center gap-6 text-base font-medium">
       {navLinks.map((link) => (
         <li>
           {link.highlight ? (
@@ -31,7 +27,7 @@ const currentPath = Astro.url.pathname;
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-accent text-black px-3 py-1 rounded-full text-sm font-semibold hover:bg-yellow-300 transition-colors"
+              class="bg-accent text-black px-3 py-1 rounded-md text-base font-semibold hover:bg-yellow-300 transition-colors"
             >
               {link.label} ↗
             </a>
@@ -48,7 +44,7 @@ const currentPath = Astro.url.pathname;
             <a
               href={link.href}
               class:list={[
-                'transition-colors hover:text-accent',
+                'transition-colors hover:text-accent hover:underline hover:decoration-dashed hover:underline-offset-4',
                 currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
                   ? 'text-accent font-semibold'
                   : 'text-primary',
@@ -76,7 +72,7 @@ const currentPath = Astro.url.pathname;
 
   <!-- Mobile Nav -->
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 pb-6">
-    <ul class="flex flex-col gap-4 pt-4 text-sm font-medium">
+    <ul class="flex flex-col gap-4 pt-4 text-base font-medium">
       {navLinks.map((link) => (
         <li>
           {link.highlight ? (
@@ -84,7 +80,7 @@ const currentPath = Astro.url.pathname;
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block bg-accent text-black px-4 py-2 rounded-full font-semibold"
+              class="inline-block bg-accent text-black px-4 py-2 rounded-md font-semibold"
             >
               {link.label} ↗
             </a>
@@ -93,7 +89,7 @@ const currentPath = Astro.url.pathname;
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-primary hover:text-accent transition-colors"
+              class="text-primary hover:text-accent transition-colors hover:underline hover:decoration-dashed hover:underline-offset-4"
             >
               {link.label} ↗
             </a>
@@ -101,7 +97,7 @@ const currentPath = Astro.url.pathname;
             <a
               href={link.href}
               class:list={[
-                'transition-colors hover:text-accent',
+                'transition-colors hover:text-accent hover:underline hover:decoration-dashed hover:underline-offset-4',
                 currentPath === link.href ? 'text-accent font-semibold' : 'text-primary',
               ]}
             >

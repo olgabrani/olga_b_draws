@@ -47,7 +47,8 @@ const { categories } = Astro.props;
       // Show/hide cards
       cards.forEach((card) => {
         const cardEl = card as HTMLElement;
-        if (category === 'all' || cardEl.dataset.category === category) {
+        const cardCategories = (cardEl.dataset.categories || '').split(',');
+        if (category === 'all' || cardCategories.includes(category!)) {
           cardEl.style.display = '';
         } else {
           cardEl.style.display = 'none';

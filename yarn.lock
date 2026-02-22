@@ -399,10 +399,25 @@
   resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-5.2.8.tgz#10c95d877d972c7de5bd4592309d42fb6a5e1a5b"
   integrity sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg==
 
+"@fontsource/josefin-sans@^5.2.8":
+  version "5.2.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/josefin-sans/-/josefin-sans-5.2.8.tgz#167448041614ce7b8bacc1aefa06151575977ed8"
+  integrity sha512-bGY9VWF01JQc5pAOF3+tLlm75dpwJrRhd5CzY3/oyksvdZQbtwOHSDuu20VGxbBDx2/JQdllNvSJFgqI4QGGqg==
+
+"@fontsource/nunito@^5.2.7":
+  version "5.2.7"
+  resolved "https://registry.yarnpkg.com/@fontsource/nunito/-/nunito-5.2.7.tgz#158a5726437c3899814830db23ec36896fcc44e4"
+  integrity sha512-pmtBq0H9ex9nk+RtJYEJOD9pag393iHETnl/PVKleF4i06cd0ttngK5ZCTgYb5eOqR3Xdlrjtev8m7bmgYprew==
+
 "@fontsource/poppins@^5.2.7":
   version "5.2.7"
   resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-5.2.7.tgz#bad145a8a625340873faff1f95b254f032e0d588"
   integrity sha512-6uQyPmseo4FgI97WIhA4yWRlNaoLk4vSDK/PyRwdqqZb5zAEuc+Kunt8JTMcsHYUEGYBtN15SNkMajMdqUSUmg==
+
+"@fontsource/quicksand@^5.2.10":
+  version "5.2.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/quicksand/-/quicksand-5.2.10.tgz#e85fe2993d70db02069cced60c246673e802c363"
+  integrity sha512-rck0ccT6vJF9RnbSW2ON1grq5qFZvjVOGvYIUixATXF8mNh4KglD+8Sn8QpRgKQBSBJF5yOR3SBYBWPg/Y8YbQ==
 
 "@img/colour@^1.0.0":
   version "1.0.0"
