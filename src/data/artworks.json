@@ -8,7 +8,7 @@
   { "id": "scan-6", "title": "Happy halloween", "image": "scan-6.jpeg", "categories": ["characters"], "featured": false },
   { "id": "scan-7", "title": "Scan 7", "image": "scan-7.jpeg", "categories": ["sketchbook"], "featured": false },
   { "id": "scan-8", "title": "Scan 8", "image": "scan-8.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-9", "title": "Scan 9", "image": "scan-9.jpeg", "categories": ["sketchbook"], "featured": false },
+  { "id": "scan-9", "title": "Lovely trees", "image": "scan-9.jpeg", "categories": ["sketchbook"], "featured": false },
   { "id": "scan-10", "title": "Scan 10", "image": "scan-10.jpeg", "categories": ["sketchbook"], "featured": false },
   { "id": "scan-11", "title": "Scan 11", "image": "scan-11.jpeg", "categories": ["sketchbook"], "featured": false },
   { "id": "scan-12", "title": "Scan 12", "image": "scan-12.jpeg", "categories": ["sketchbook"], "featured": false },
@@ -18,7 +18,6 @@
   { "id": "scan-19", "title": "Scan 19", "image": "scan-19.jpeg", "categories": ["sketchbook"], "featured": false },
   { "id": "scan-20", "title": "Scan 20", "image": "scan-20.jpeg", "categories": ["sketchbook"], "featured": false },
   { "id": "bee-curious", "title": "Bee Curious", "image": "bee-curious.jpeg", "categories": ["nature"], "featured": false },
-  { "id": "viber-1", "title": "Viber 1", "image": "viber-1.jpg", "categories": ["everyday"], "featured": false },
   { "id": "viber-2", "title": "Viber 2", "image": "viber-2.jpg", "categories": ["everyday"], "featured": false },
   { "id": "face-2", "title": "Face 2", "image": "face-2.png", "categories": ["characters"], "featured": false },
   { "id": "untitled", "title": "Untitled", "image": "untitled.png", "categories": ["sketchbook"], "featured": false }
