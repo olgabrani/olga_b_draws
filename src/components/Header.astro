@@ -1,60 +1,82 @@
 ---
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Shop', href: 'https://www.redbubble.com/people/olga-b-draws/shop', external: true, highlight: true },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Instagram', href: 'https://www.instagram.com/olga_b_draws/', external: true },
+  { label: "Home", href: "/" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "About", href: "/about" },
+  
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/olga_b_draws/",
+    external: true,
+  },
+  {
+    label: "Shop",
+    href: "https://www.redbubble.com/people/olga-b-draws/shop",
+    external: true,
+    highlight: true,
+  },
+  { label: "Contact", href: "/contact" },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header id="site-header" class="sticky top-0 z-50 bg-white transition-shadow duration-300">
+<header
+  id="site-header"
+  class="sticky top-0 z-50 bg-white transition-shadow duration-300"
+>
   <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="shrink-0">
-      <img src="/logo.png" alt="Olga B Draws" width="144" height="144" class="rounded-full" />
+      <img
+        src="/logo.png"
+        alt="Olga B Draws"
+        width="144"
+        height="144"
+        class="rounded-full"
+      />
     </a>
 
     <!-- Desktop Nav -->
     <ul class="hidden md:flex items-center gap-6 text-base font-medium">
-      {navLinks.map((link) => (
-        <li>
-          {link.highlight ? (
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="bg-accent text-black px-3 py-1 rounded-md text-base font-semibold hover:bg-yellow-300 transition-colors"
-            >
-              {link.label} ↗
-            </a>
-          ) : link.external ? (
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-primary hover:text-accent transition-colors"
-            >
-              {link.label} ↗
-            </a>
-          ) : (
-            <a
-              href={link.href}
-              class:list={[
-                'transition-colors hover:text-accent hover:underline hover:decoration-dashed hover:underline-offset-4',
-                currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
-                  ? 'text-accent font-semibold'
-                  : 'text-primary',
-              ]}
-            >
-              {link.label}
-            </a>
-          )}
-        </li>
-      ))}
+      {
+        navLinks.map((link) => (
+          <li>
+            {link.highlight ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-accent text-black px-3 py-1 rounded-md text-base font-semibold hover:bg-yellow-300 transition-colors"
+              >
+                {link.label} ↗
+              </a>
+            ) : link.external ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:text-accent transition-colors"
+              >
+                {link.label} ↗
+              </a>
+            ) : (
+              <a
+                href={link.href}
+                class:list={[
+                  "transition-colors hover:text-accent hover:underline hover:decoration-dashed hover:underline-offset-4",
+                  currentPath === link.href ||
+                  (link.href !== "/" && currentPath.startsWith(link.href))
+                    ? "text-accent font-semibold"
+                    : "text-primary",
+                ]}
+              >
+                {link.label}
+              </a>
+            )}
+          </li>
+        ))
+      }
     </ul>
 
     <!-- Mobile Hamburger -->
@@ -64,83 +86,98 @@ const currentPath = Astro.url.pathname;
       aria-label="Toggle menu"
       aria-expanded="false"
     >
-      <span class="block w-6 h-0.5 bg-primary transition-transform origin-center" id="bar1"></span>
-      <span class="block w-6 h-0.5 bg-primary transition-opacity" id="bar2"></span>
-      <span class="block w-6 h-0.5 bg-primary transition-transform origin-center" id="bar3"></span>
+      <span
+        class="block w-6 h-0.5 bg-primary transition-transform origin-center"
+        id="bar1"></span>
+      <span class="block w-6 h-0.5 bg-primary transition-opacity" id="bar2"
+      ></span>
+      <span
+        class="block w-6 h-0.5 bg-primary transition-transform origin-center"
+        id="bar3"></span>
     </button>
   </nav>
 
   <!-- Mobile Nav -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 pb-6">
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-white border-t border-gray-100 px-6 pb-6"
+  >
     <ul class="flex flex-col gap-4 pt-4 text-base font-medium">
-      {navLinks.map((link) => (
-        <li>
-          {link.highlight ? (
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-block bg-accent text-black px-4 py-2 rounded-md font-semibold"
-            >
-              {link.label} ↗
-            </a>
-          ) : link.external ? (
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-primary hover:text-accent transition-colors hover:underline hover:decoration-dashed hover:underline-offset-4"
-            >
-              {link.label} ↗
-            </a>
-          ) : (
-            <a
-              href={link.href}
-              class:list={[
-                'transition-colors hover:text-accent hover:underline hover:decoration-dashed hover:underline-offset-4',
-                currentPath === link.href ? 'text-accent font-semibold' : 'text-primary',
-              ]}
-            >
-              {link.label}
-            </a>
-          )}
-        </li>
-      ))}
+      {
+        navLinks.map((link) => (
+          <li>
+            {link.highlight ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block bg-accent text-black px-4 py-2 rounded-md font-semibold"
+              >
+                {link.label} ↗
+              </a>
+            ) : link.external ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:text-accent transition-colors hover:underline hover:decoration-dashed hover:underline-offset-4"
+              >
+                {link.label} ↗
+              </a>
+            ) : (
+              <a
+                href={link.href}
+                class:list={[
+                  "transition-colors hover:text-accent hover:underline hover:decoration-dashed hover:underline-offset-4",
+                  currentPath === link.href
+                    ? "text-accent font-semibold"
+                    : "text-primary",
+                ]}
+              >
+                {link.label}
+              </a>
+            )}
+          </li>
+        ))
+      }
     </ul>
   </div>
 </header>
 
 <script>
   // Sticky header shadow on scroll
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
+  const header = document.getElementById("site-header");
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 10) {
-      header?.classList.add('shadow-md');
+      header?.classList.add("shadow-md");
     } else {
-      header?.classList.remove('shadow-md');
+      header?.classList.remove("shadow-md");
     }
   });
 
   // Mobile menu toggle
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const bar1 = document.getElementById('bar1');
-  const bar2 = document.getElementById('bar2');
-  const bar3 = document.getElementById('bar3');
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const bar1 = document.getElementById("bar1");
+  const bar2 = document.getElementById("bar2");
+  const bar3 = document.getElementById("bar3");
 
-  btn?.addEventListener('click', () => {
-    const isOpen = !menu?.classList.contains('hidden');
-    menu?.classList.toggle('hidden');
-    btn.setAttribute('aria-expanded', String(!isOpen));
+  btn?.addEventListener("click", () => {
+    const isOpen = !menu?.classList.contains("hidden");
+    menu?.classList.toggle("hidden");
+    btn.setAttribute("aria-expanded", String(!isOpen));
 
     if (!isOpen) {
-      bar1?.style.setProperty('transform', 'rotate(45deg) translate(3px, 3px)');
-      bar2?.style.setProperty('opacity', '0');
-      bar3?.style.setProperty('transform', 'rotate(-45deg) translate(3px, -3px)');
+      bar1?.style.setProperty("transform", "rotate(45deg) translate(3px, 3px)");
+      bar2?.style.setProperty("opacity", "0");
+      bar3?.style.setProperty(
+        "transform",
+        "rotate(-45deg) translate(3px, -3px)",
+      );
     } else {
-      bar1?.style.setProperty('transform', 'none');
-      bar2?.style.setProperty('opacity', '1');
-      bar3?.style.setProperty('transform', 'none');
+      bar1?.style.setProperty("transform", "none");
+      bar2?.style.setProperty("opacity", "1");
+      bar3?.style.setProperty("transform", "none");
     }
   });
 </script>

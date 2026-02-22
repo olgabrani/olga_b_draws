@@ -1,6 +1,26 @@
 [
-  { "id": "characters", "label": "Characters" },
-  { "id": "nature", "label": "Nature" },
-  { "id": "everyday", "label": "Everyday Scenes" },
-  { "id": "sketchbook", "label": "Sketchbook" }
+    {
+        "id": "characters",
+        "label": "Characters"
+    },
+    {
+        "id": "nature",
+        "label": "Nature"
+    },
+    {
+        "id": "everyday",
+        "label": "Everyday Scenes"
+    },
+    {
+        "id": "landscape",
+        "label": "Landscape"
+    },
+    {
+        "id": "cute",
+        "label": "Cute"
+    }, 
+    {
+        "id": "creatures",
+        "label": "Creatures"
+    }
 ]

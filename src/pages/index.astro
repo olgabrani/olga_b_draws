@@ -1,14 +1,24 @@
 ---
-import Layout from '../components/Layout.astro';
-import Button from '../components/Button.astro';
-import ArtworkCard from '../components/ArtworkCard.astro';
-import artworks from '../data/artworks.json';
+import Layout from "../components/Layout.astro";
+import Button from "../components/Button.astro";
+import ArtworkCard from "../components/ArtworkCard.astro";
+import artworks from "../data/artworks.json";
 
 const featuredWorks = artworks.filter((a) => a.featured).slice(0, 3);
 
 // Hero image
-const heroImages = import.meta.glob<{ default: ImageMetadata }>('../assets/images/gallery/scan-4.jpeg', { eager: true });
-const heroImage = heroImages['../assets/images/gallery/scan-4.jpeg'];
+const heroImages = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/images/gallery/scan-4.jpeg",
+  { eager: true },
+);
+const heroImage = heroImages["../assets/images/gallery/scan-4.jpeg"];
+
+// About section image
+const aboutImages = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/images/me.jpg",
+  { eager: true },
+);
+const aboutImage = aboutImages["../assets/images/me.jpg"];
 ---
 
 <Layout
@@ -22,7 +32,9 @@ const heroImage = heroImages['../assets/images/gallery/scan-4.jpeg'];
         Olga B. Draws
       </h1>
       <div class="w-24 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
-      <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-xl mx-auto font-body">
+      <p
+        class="mt-6 text-lg md:text-xl text-gray-600 max-w-xl mx-auto font-body"
+      >
         Colorful illustrations & playful visual stories.
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-4">
@@ -31,17 +43,19 @@ const heroImage = heroImages['../assets/images/gallery/scan-4.jpeg'];
       </div>
 
       <!-- Hero Featured Image -->
-      {heroImage && (
-        <div class="mt-14 max-w-5xl mx-auto fade-in">
-          <img
-            src={heroImage.default.src}
-            alt="Featured Artwork by Olga B Draws"
-            width={heroImage.default.width}
-            height={heroImage.default.height}
-            class="w-full h-auto rounded-2xl shadow-lg"
-          />
-        </div>
-      )}
+      {
+        heroImage && (
+          <div class="mt-14 max-w-5xl mx-auto fade-in">
+            <img
+              src={heroImage.default.src}
+              alt="Featured Artwork by Olga B Draws"
+              width={heroImage.default.width}
+              height={heroImage.default.height}
+              class="w-full h-auto rounded-2xl shadow-lg"
+            />
+          </div>
+        )
+      }
     </div>
   </section>
 
@@ -52,17 +66,19 @@ const heroImage = heroImages['../assets/images/gallery/scan-4.jpeg'];
         Featured Work
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        {featuredWorks.map((artwork) => (
-          <div class="fade-in">
-            <ArtworkCard
-              id={artwork.id}
-              title={artwork.title}
-              image={artwork.image}
-              categories={artwork.categories}
-              shop_url={artwork.shop_url}
-            />
-          </div>
-        ))}
+        {
+          featuredWorks.map((artwork) => (
+            <div class="fade-in">
+              <ArtworkCard
+                id={artwork.id}
+                title={artwork.title}
+                image={artwork.image}
+                categories={artwork.categories}
+                shop_url={artwork.shop_url}
+              />
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -75,9 +91,13 @@ const heroImage = heroImages['../assets/images/gallery/scan-4.jpeg'];
         Love what you see? Get prints & more.
       </h2>
       <p class="text-gray-600 mb-8 max-w-lg mx-auto">
-        Illustrations available as prints, stickers, phone cases, and more on Redbubble.
+        Illustrations available as prints, stickers, phone cases, and more on
+        Redbubble.
       </p>
-      <Button href="https://www.redbubble.com/people/olga-b-draws/shop" variant="primary">
+      <Button
+        href="https://www.redbubble.com/people/olga-b-draws/shop"
+        variant="primary"
+      >
         Visit My Shop →
       </Button>
     </div>
@@ -87,28 +107,35 @@ const heroImage = heroImages['../assets/images/gallery/scan-4.jpeg'];
   <section class="py-16 md:py-24 bg-neutral">
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <!-- Left: About Image Placeholder -->
+        <!-- Left: About Image -->
         <div class="fade-in">
-          <div class="w-full aspect-square bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400">
-            <span class="text-sm">Photo coming soon</span>
-          </div>
+          {
+            aboutImage ? (
+              <img
+                src={aboutImage.default.src}
+                alt="Olga B - Illustrator"
+                width={aboutImage.default.width}
+                height={aboutImage.default.height}
+                class="w-full h-auto rounded-2xl shadow-lg"
+              />
+            ) : (
+              <div class="w-full aspect-square bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400">
+                <span class="text-sm">Photo coming soon</span>
+              </div>
+            )
+          }
         </div>
 
         <!-- Right: About Text -->
         <div class="fade-in">
-          <h2 class="font-heading font-bold text-3xl mb-6">
-            Hi, I'm Olga
-          </h2>
+          <h2 class="font-heading font-bold text-3xl mb-6">Hi, I'm Olga</h2>
           <div class="space-y-4 text-gray-600 leading-relaxed">
             <p>
-              I'm an illustrator who loves bringing colorful characters and playful scenes to life.
-              My work is inspired by everyday moments, nature, and the small things that make us smile.
+              An illustrator based in Athens, creating playful, colorful worlds
+              filled with curious characters. I’m endlessly inspired by nature,
+              small moments, and the quiet beauty hidden in everyday life.
             </p>
-            <p>
-              Whether it's a curious bee or a happy face, I aim to create art that feels warm,
-              inviting, and a little bit whimsical. I'm always open to new collaborations
-              and creative projects.
-            </p>
+        
           </div>
           <div class="mt-8">
             <Button href="/about" variant="outline">Read More</Button>
@@ -124,10 +151,70 @@ const heroImage = heroImages['../assets/images/gallery/scan-4.jpeg'];
       <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">
         Interested in collaborating?
       </h2>
-      <p class="text-gray-600 mb-8">
-        Let's create something playful together.
-      </p>
+      <p class="text-gray-600 mb-8">Let's create something playful together.</p>
       <Button href="/contact" variant="primary">Contact</Button>
     </div>
   </section>
+
+  <!-- Lightbox Modal -->
+  <div
+    id="lightbox"
+    class="fixed inset-0 z-100 hidden items-center justify-center bg-black/80 backdrop-blur-sm"
+  >
+    <button
+      id="lightbox-close"
+      class="absolute top-6 right-6 text-white text-4xl leading-none hover:text-accent transition-colors cursor-pointer"
+      aria-label="Close">&times;</button
+    >
+    <div class="max-w-5xl max-h-[90vh] mx-4">
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+      />
+      <p
+        id="lightbox-title"
+        class="text-white text-center mt-4 font-heading text-lg"
+      >
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById(
+      "lightbox-img",
+    ) as HTMLImageElement;
+    const lightboxTitle = document.getElementById("lightbox-title");
+    const lightboxClose = document.getElementById("lightbox-close");
+
+    // Open lightbox on image click
+    document.querySelectorAll(".artwork-img").forEach((img) => {
+      img.addEventListener("click", () => {
+        const el = img as HTMLElement;
+        lightboxImg.src = el.dataset.fullSrc || "";
+        lightboxImg.alt = el.dataset.title || "";
+        if (lightboxTitle) lightboxTitle.textContent = el.dataset.title || "";
+        lightbox?.classList.remove("hidden");
+        lightbox?.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    // Close lightbox
+    function closeLightbox() {
+      lightbox?.classList.add("hidden");
+      lightbox?.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+
+    lightboxClose?.addEventListener("click", closeLightbox);
+    lightbox?.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
 </Layout>

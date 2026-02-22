@@ -1,6 +1,13 @@
 ---
-import Layout from '../components/Layout.astro';
-import Button from '../components/Button.astro';
+import Layout from "../components/Layout.astro";
+import Button from "../components/Button.astro";
+
+// Profile photo
+const profileImages = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/images/profile-photo.jpg",
+  { eager: true },
+);
+const profileImage = profileImages["../assets/images/profile-photo.jpg"];
 ---
 
 <Layout
@@ -12,9 +19,21 @@ import Button from '../components/Button.astro';
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <!-- Left: Photo -->
         <div class="fade-in">
-          <div class="w-full aspect-[3/4] bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 sticky top-28">
-            <span class="text-sm">Studio photo coming soon</span>
-          </div>
+          {
+            profileImage ? (
+              <img
+                src={profileImage.default.src}
+                alt="Olga B - Illustrator"
+                width={profileImage.default.width}
+                height={profileImage.default.height}
+                class="w-full h-auto rounded-2xl shadow-lg sticky top-28"
+              />
+            ) : (
+              <div class="w-full aspect-3/4 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 sticky top-28">
+                <span class="text-sm">Studio photo coming soon</span>
+              </div>
+            )
+          }
         </div>
 
         <!-- Right: Content -->
@@ -27,47 +46,48 @@ import Button from '../components/Button.astro';
             <!-- Intro -->
             <div>
               <p>
-                Hi, I'm Olga — an illustrator based in Greece. I create colorful,
-                playful illustrations that tell small visual stories. My work lives
-                somewhere between whimsy and warmth, always aiming to bring a smile.
+                I’m Olga, an illustrator based in Athens, Greece. I began
+                drawing a few years ago and somehow never stopped — as if a
+                small door opened and refused to close. I create playful,
+                colorful worlds inhabited by curious creatures with strong
+                personalities and quiet attitudes. My work drifts toward the
+                dreamy, always searching for the beauty, kindness, and light
+                hidden in ordinary things.
               </p>
             </div>
 
             <!-- Inspiration -->
             <div>
-              <h2 class="font-heading font-semibold text-xl text-primary mb-3">Inspiration</h2>
+              <h2 class="font-heading font-semibold text-xl text-primary mb-3">
+                Inspiration
+              </h2>
               <p>
-                I find inspiration in everyday life — morning coffee, sunlight patterns,
-                animals with personality, overheard conversations, and the small details
-                most people overlook. Nature, people, and simple moments are my biggest
-                creative triggers.
+                Nature, animals, and hidden beauty are constant sources of
+                inspiration for me. I’m endlessly in awe of life, especially the
+                small moments where joy fully lives. I often draw in the subway,
+                in cafés, or even during long work meetings!
               </p>
             </div>
 
             <!-- Process -->
             <div>
-              <h2 class="font-heading font-semibold text-xl text-primary mb-3">Process</h2>
+              <h2 class="font-heading font-semibold text-xl text-primary mb-3">
+                Process
+              </h2>
               <p>
-                Most of my work starts on paper. I sketch freely in my sketchbook,
-                then scan and sometimes refine digitally. I like keeping the hand-drawn
-                quality visible — imperfections included. It's what makes each piece
-                feel alive and honest.
-              </p>
-            </div>
-
-            <!-- Medium -->
-            <div>
-              <h2 class="font-heading font-semibold text-xl text-primary mb-3">Medium</h2>
-              <p>
-                I work primarily with markers, colored pencils, and ink on paper.
-                Occasionally I explore digital tools for cleanup and color adjustment,
-                but the foundation is always traditional and tactile.
+                Everything begins on paper. I start with pencil, letting the
+                lines find their way, then move to ink to give them clarity and
+                presence. Watercolor is my favorite medium — I’m drawn to its
+                transparency and movement — though I enjoy experimenting and
+                drawing with whatever feels right for the moment.
               </p>
             </div>
 
             <!-- Collaborations -->
             <div>
-              <h2 class="font-heading font-semibold text-xl text-primary mb-3">Let's Work Together</h2>
+              <h2 class="font-heading font-semibold text-xl text-primary mb-3">
+                Let's Work Together
+              </h2>
               <p>
                 I'm open to collaborations, illustration projects, and creative
                 partnerships. Whether it's editorial, merchandise, or something

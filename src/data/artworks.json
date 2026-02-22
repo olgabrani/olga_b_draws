@@ -1,24 +1,311 @@
 [
-  { "id": "scan", "title": "Scan", "image": "scan.jpeg", "categories": ["sketchbook"], "featured": true, "shop_url": "https://www.redbubble.com/i/sticker/Chamonix-main-square-by-olga-b-draws/173019123.EJUG5" },
-  { "id": "scan-1", "title": "Scan 1", "image": "scan-1.jpeg", "categories": ["sketchbook"], "featured": true },
-  { "id": "scan-2", "title": "Scan 2", "image": "scan-2.jpeg", "categories": ["sketchbook"], "featured": true },
-  { "id": "scan-3", "title": "Hockey player", "image": "scan-3.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-4", "title": "Scan 4", "image": "scan-4.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-5", "title": "Scan 5", "image": "scan-5.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-6", "title": "Happy halloween", "image": "scan-6.jpeg", "categories": ["characters"], "featured": false },
-  { "id": "scan-7", "title": "Scan 7", "image": "scan-7.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-8", "title": "Scan 8", "image": "scan-8.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-9", "title": "Lovely trees", "image": "scan-9.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-10", "title": "Scan 10", "image": "scan-10.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-11", "title": "Scan 11", "image": "scan-11.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-12", "title": "Scan 12", "image": "scan-12.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-13", "title": "Scan 13", "image": "scan-13.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-15", "title": "Scan 15", "image": "scan-15.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-16", "title": "Scan 16", "image": "scan-16.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-19", "title": "Scan 19", "image": "scan-19.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "scan-20", "title": "Scan 20", "image": "scan-20.jpeg", "categories": ["sketchbook"], "featured": false },
-  { "id": "bee-curious", "title": "Bee Curious", "image": "bee-curious.jpeg", "categories": ["nature"], "featured": false },
-  { "id": "viber-2", "title": "Viber 2", "image": "viber-2.jpg", "categories": ["everyday"], "featured": false },
-  { "id": "face-2", "title": "Face 2", "image": "face-2.png", "categories": ["characters"], "featured": false },
-  { "id": "untitled", "title": "Untitled", "image": "untitled.png", "categories": ["sketchbook"], "featured": false }
+    {
+    "id": "scan-4",
+    "title": "Chamonix",
+    "image": "scan-4.jpeg",
+    "categories": [
+      "landscape"
+    ],
+    "featured": false
+  },
+    {
+    "id": "scan-2",
+    "title": "Church in Syros",
+    "image": "scan-2.jpeg",
+    "categories": [
+      "landscape"
+    ],
+    "featured": true
+  },
+    {
+    "id": "scan-1",
+    "title": "Chamonix Mont-Blanc",
+    "image": "scan-1.jpeg",
+    "categories": [
+      "landscape"
+    ],
+    "featured": true
+  },
+  {
+    "id": "scan",
+    "title": "Πλυφα Athens",
+    "image": "scan.jpeg",
+    "categories": [
+      "landscape"
+    ],
+    "featured": false,
+    "shop_url": "https://www.redbubble.com/i/postcard/Urban-colors-by-olga-b-draws/172694117.V7PMD"
+  },
+
+
+  {
+    "id": "scan-3",
+    "title": "Hockey player",
+    "image": "scan-3.jpeg",
+    "categories": [
+      "characters"
+    ],
+    "featured": false
+  },
+
+  {
+    "id": "scan-5",
+    "title": "Never stop dreaming",
+    "image": "scan-5.jpeg",
+    "categories": [
+      "cute"
+    ],
+    "featured": false
+  },
+  {
+    "id": "scan-6",
+    "title": "Happy halloween",
+    "image": "scan-6.jpeg",
+    "categories": [
+      "characters", "cute"
+    ],
+    "featured": false
+  },
+  
+  {
+    "id": "scan-8",
+    "title": "Living room wall",
+    "image": "scan-8.jpeg",
+    "categories": [
+      "creatures"
+    ],
+    "featured": false
+  },
+  {
+    "id": "scan-9",
+    "title": "Lovely trees",
+    "image": "scan-9.jpeg",
+    "categories": [
+      "nature"
+    ],
+    "featured": true
+  },
+  {
+    "id": "scan-10",
+    "title": "Happy witch",
+    "image": "scan-10.jpeg",
+    "categories": [
+      "cute", "characters"
+    ],
+    "featured": false
+  },
+    {
+    "id": "bee-curious",
+    "title": "Bee Curious",
+    "image": "bee-curious.jpeg",
+    "categories": [
+      "nature"
+    ],
+    "featured": false
+  },
+      {
+    "id": "lola-petralona",
+    "title": "Lola Petralona",
+    "image": "lola-petralona.jpg",
+    "categories": [
+      "landscape"
+    ],
+    "featured": false
+  },
+
+  {
+    "id": "scan-15",
+    "title": "Anarchy in the barn",
+    "image": "scan-15.jpeg",
+    "categories": [
+      "creatures"
+    ],
+    "featured": false
+  },
+  {
+    "id": "scan-16",
+    "title": "Lovely fish",
+    "image": "scan-16.jpeg",
+    "categories": [
+      "creatures", "nature"
+    ],
+    "featured": false
+  },
+  {
+    "id": "scan-19",
+    "title": "Elena & Anna",
+    "image": "scan-19.jpeg",
+    "categories": [
+      "characters"
+    ],
+    "featured": false
+  },
+  {
+    "id": "scan-20",
+    "title": "Sandra & Tom",
+    "image": "scan-20.jpeg",
+    "categories": [
+      "characters"
+    ],
+    "featured": false
+  },
+
+  {
+    "id": "amsterdam",
+    "title": "Amsterdam",
+    "image": "amsterdam.jpg",
+    "categories": [
+      "everyday"
+    ],
+    "featured": false
+  },
+  {
+    "id": "awesome-life",
+    "title": "Awesome Life",
+    "image": "awesome-life.jpg",
+    "categories": [
+      "sketchbook"
+    ],
+    "featured": false
+  },
+  {
+    "id": "baby-card",
+    "title": "Baby Card",
+    "image": "baby-card.jpg",
+    "categories": [
+      "cute"
+    ],
+    "featured": false
+  },
+  {
+    "id": "beautiful-creature",
+    "title": "Beautiful Creature",
+    "image": "beautiful-creature.jpg",
+    "categories": [
+      "creatures"
+    ],
+    "featured": false
+  },
+  {
+    "id": "bookmarks",
+    "title": "Bookmarks",
+    "image": "bookmarks.jpg",
+    "categories": [
+      "sketchbook"
+    ],
+    "featured": false
+  },
+  {
+    "id": "christmas-1",
+    "title": "Christmas",
+    "image": "christmas-1.jpg",
+    "categories": [
+      "cute"
+    ],
+    "featured": false
+  },
+  {
+    "id": "dream-high",
+    "title": "Dream High",
+    "image": "dream-high.jpg",
+    "categories": [
+      "sketchbook"
+    ],
+    "featured": false
+  },
+
+  {
+    "id": "fish",
+    "title": "Fish",
+    "image": "fish.jpg",
+    "categories": [
+      "creatures"
+    ],
+    "featured": false
+  },
+
+  {
+    "id": "friends",
+    "title": "Friends",
+    "image": "friends.jpg",
+    "categories": [
+      "characters"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ginger-girl",
+    "title": "Ginger Girl",
+    "image": "ginger-girl.jpg",
+    "categories": [
+      "characters"
+    ],
+    "featured": false
+  },
+  {
+    "id": "girl-on-fire",
+    "title": "Girl on Fire",
+    "image": "girl-on-fire.jpg",
+    "categories": [
+      "characters"
+    ],
+    "featured": false
+  },
+  {
+    "id": "grandma-and-me",
+    "title": "Grandma and Me",
+    "image": "grandma-and-me.jpg",
+    "categories": [
+      "characters"
+    ],
+    "featured": false
+  },
+
+  {
+    "id": "purple-house",
+    "title": "Automn landscape",
+    "image": "purple-house.jpg",
+    "categories": [
+      "landscape", "nature"
+    ],
+    "featured": false,
+    "shop_url": "https://www.redbubble.com/i/sticker/Autumn-cottage-Dreamscape-by-olga-b-draws/172739412.EJUG5"
+  },
+  {
+    "id": "uncle-bobs-living-room",
+    "title": "Uncle Bob's Living Room",
+    "image": "uncle-bobs-living-room.jpg",
+    "categories": [
+      "everyday"
+    ],
+    "featured": false
+  },
+  {
+    "id": "why",
+    "title": "Why?",
+    "image": "why.jpg",
+    "categories": [
+      "sketchbook"
+    ],
+    "featured": false
+  },
+  {
+    "id": "wise-girl",
+    "title": "Wise Girl",
+    "image": "wise-girl.jpg",
+    "categories": [
+      "characters"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yoga-pose",
+    "title": "Yoga Pose",
+    "image": "yoga-pose.jpg",
+    "categories": [
+      "characters"
+    ],
+    "featured": false,
+    "shop_url": "https://www.redbubble.com/i/tank-top/Virabadrasana-A-by-olga-b-draws/174995170.N283C"
+  }
 ]
