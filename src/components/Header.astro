@@ -14,6 +14,17 @@ const navLinks = [
 
 const currentPath = Astro.url.pathname;
 const baseUrl = import.meta.env.BASE_URL;
+const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+const currentLocalPath = (() => {
+  if (!currentPath.startsWith(normalizedBase)) return currentPath;
+  const stripped = currentPath.slice(normalizedBase.length - 1);
+  return stripped === '' ? '/' : stripped;
+})();
+
+const withBase = (path: string) => {
+  if (path === '/') return normalizedBase;
+  return `${normalizedBase}${path.replace(/^\//, '')}`;
+};
 ---
 
 <header
@@ -22,9 +33,9 @@ const baseUrl = import.meta.env.BASE_URL;
 >
   <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
-    <a href={baseUrl} class="shrink-0">
+    <a href={normalizedBase} class="shrink-0">
       <img
-        src={`${baseUrl}logo.png`}
+        src={`${normalizedBase}logo.png`}
         alt="Olga B Draws"
         width="144"
         height="144"
@@ -39,7 +50,7 @@ const baseUrl = import.meta.env.BASE_URL;
           <li>
             {link.highlight ? (
               <a
-                href={link.href}
+                href={link.external ? link.href : withBase(link.href)}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="bg-accent text-black px-3 py-1 rounded-md text-base font-semibold hover:bg-yellow-300 transition-colors"
@@ -57,11 +68,11 @@ const baseUrl = import.meta.env.BASE_URL;
               </a>
             ) : (
               <a
-                href={link.href}
+                href={withBase(link.href)}
                 class:list={[
                   "transition-colors hover:text-accent hover:underline hover:decoration-dashed hover:underline-offset-4",
-                  currentPath === link.href ||
-                  (link.href !== "/" && currentPath.startsWith(link.href))
+                  currentLocalPath === link.href ||
+                  (link.href !== "/" && currentLocalPath.startsWith(link.href))
                     ? "text-accent font-semibold"
                     : "text-primary",
                 ]}
@@ -116,7 +127,7 @@ const baseUrl = import.meta.env.BASE_URL;
           <li>
             {link.highlight ? (
               <a
-                href={link.href}
+                href={link.external ? link.href : withBase(link.href)}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-block bg-accent text-black px-4 py-2 rounded-md font-semibold"
@@ -134,10 +145,10 @@ const baseUrl = import.meta.env.BASE_URL;
               </a>
             ) : (
               <a
-                href={link.href}
+                href={withBase(link.href)}
                 class:list={[
                   "transition-colors hover:text-accent hover:underline hover:decoration-dashed hover:underline-offset-4",
-                  currentPath === link.href
+                  currentLocalPath === link.href
                     ? "text-accent font-semibold"
                     : "text-primary",
                 ]}
