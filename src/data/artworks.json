@@ -160,6 +160,16 @@
     "featured": false
   },
   {
+    "id": "calm-girl-wide-tall",
+    "title": "Yoga girl",
+    "image": "calm-girl-wide-tall.jpg",
+    "categories": [
+      "characters", "cute"
+    ],
+    "featured": false,
+    "shop_url": "https://www.redbubble.com/i/hoodie/Yoga-girl-by-olga-b-draws/172574555.OJBFG"
+  },
+  {
     "id": "awesome-life",
     "title": "Awesome Life",
     "image": "awesome-life.jpg",
@@ -180,11 +190,12 @@
   {
     "id": "beautiful-creature",
     "title": "Beautiful Creature",
-    "image": "beautiful-creature.jpg",
+    "image": "beautiful-creature.png",
     "categories": [
       "creatures"
     ],
-    "featured": false
+    "featured": false,
+    "shop_url": "https://www.redbubble.com/i/t-shirt/Beautiful-Creature-by-olga-b-draws/172196537.WFLAH"
   },
   {
     "id": "bookmarks",
@@ -306,6 +317,6 @@
       "characters"
     ],
     "featured": false,
-    "shop_url": "https://www.redbubble.com/i/tank-top/Virabadrasana-A-by-olga-b-draws/174995170.N283C"
+    "shop_url": "https://www.redbubble.com/i/t-shirt/Virabadrasana-A-by-olga-b-draws/174995170.3KEDSq"
   }
 ]
